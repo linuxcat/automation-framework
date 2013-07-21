@@ -18,7 +18,7 @@
 
         <!-- test properties -->
         <baseUrl>http://test.film4.com</baseUrl>
-        <browser>PhantomJS</browser>
+        <browser>GRID</browser>
 
 
     </properties>

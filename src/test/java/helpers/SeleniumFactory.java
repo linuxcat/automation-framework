@@ -4,6 +4,12 @@ import org.openqa.selenium.UnsupportedCommandException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+
 
 /**
  * Created with IntelliJ IDEA.
@@ -17,9 +23,9 @@ public class SeleniumFactory extends Thread {
     private static WebDriver aDriver=null;
     private static boolean avoidRecursiveCall=false;
 
-    public enum BrowserName{FIREFOX, GOOGLECHROME, SAUCELABS, OPERA, IE}
+    public enum BrowserName{FIREFOX, GOOGLECHROME, SAUCELABS, OPERA, IE, GRID}
     public static BrowserName currentDriver;
-    private static final BrowserName useThisDriver = BrowserName.FIREFOX;
+    private static final BrowserName useThisDriver = BrowserName.valueOf(System.getProperty("browser"));
 
 
     public static WebDriver get() {
@@ -31,6 +37,16 @@ public class SeleniumFactory extends Thread {
                     profile.setEnableNativeEvents(true);
                     aDriver  = new FirefoxDriver();
                     currentDriver = BrowserName.FIREFOX;
+
+                case GRID:
+                    try {
+                        DesiredCapabilities capability = DesiredCapabilities.firefox();
+                        aDriver= new RemoteWebDriver(new URL("http://192.168.100.13:4444/wd/hub"), capability);
+                        currentDriver = BrowserName.GRID;
+                    }catch(MalformedURLException e){
+                        e.printStackTrace();
+                    }
+
 
             }
 
