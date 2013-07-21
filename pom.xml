@@ -76,6 +76,13 @@
             <version>0.0.21</version>
         </dependency>
 
+        <!--selenium -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>2.33.0</version>
+        </dependency>
+
 
     </dependencies>
 
@@ -88,6 +95,7 @@
                 <configuration>
                     <source>1.6</source>
                     <target>1.6</target>
+
                 </configuration>
             </plugin>
             <plugin>
@@ -129,6 +137,7 @@
                             <value>${browser}</value>
                         </systemProperty>
                     </systemProperties>
+
                 </configuration>
             </plugin>
         </plugins>

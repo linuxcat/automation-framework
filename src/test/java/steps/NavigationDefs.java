@@ -1,11 +1,10 @@
 package steps;
 
+import PageObjects.MainNavigation;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
-import cucumber.runtime.PendingException;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 /**
  * Created with IntelliJ IDEA.
@@ -15,9 +14,14 @@ import static org.junit.Assert.assertTrue;
  * To change this template use File | Settings | File Templates.
  */
 public class NavigationDefs {
+
+    private MainNavigation nav = new MainNavigation();
+
+
     @Given("^I am viewing sunday times homepage$")
     public void I_am_viewing_sunday_times_homepage() {
         // Express the Regexp above with the code you wish you had
+        nav.openHomepage();
         System.out.println("homepage");
 
     }
