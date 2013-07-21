@@ -16,14 +16,14 @@ import static org.junit.Assert.assertTrue;
  */
 public class NavigationDefs {
     @Given("^I am viewing sunday times homepage$")
-    public void I_am_viewing_sunday_times_homepage() throws Throwable {
+    public void I_am_viewing_sunday_times_homepage() {
         // Express the Regexp above with the code you wish you had
         System.out.println("homepage");
 
     }
 
     @Then("^I should see a top level nav with (.*)$")
-    public void I_should_see_a_top_level_nav_with_nav_item(String nav_item) throws Throwable {
+    public void I_should_see_a_top_level_nav_with_nav_item(String nav_item) {
         // Express the Regexp above with the code you wish you had
         assertEquals(nav_item, "hello");
 
