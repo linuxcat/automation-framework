@@ -107,7 +107,7 @@
                         <argument>--format</argument>
                         <argument>html:src/test/resources/reports</argument>
                         <arugment>--format</arugment>
-                        <argument>json:src/test/resources/reports/report.json</argument>
+                        <argument>json:src/test/resources/reports/cucumber.json</argument>
                         <argument>--glue</argument>
                         <argument>steps</argument>
                         <argument>src/test/java/features</argument>
