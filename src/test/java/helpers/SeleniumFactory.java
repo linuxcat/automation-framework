@@ -37,6 +37,7 @@ public class SeleniumFactory extends Thread {
                     profile.setEnableNativeEvents(true);
                     aDriver  = new FirefoxDriver();
                     currentDriver = BrowserName.FIREFOX;
+                    break;
 
                 case GRID:
                     try {
@@ -46,6 +47,17 @@ public class SeleniumFactory extends Thread {
                     }catch(MalformedURLException e){
                         e.printStackTrace();
                     }
+                    break;
+
+
+                case IE:
+                    try {
+                        DesiredCapabilities capability = DesiredCapabilities.internetExplorer();
+                        aDriver= new RemoteWebDriver(new URL("http://192.168.100.13:4444/wd/hub"), capability);
+                    }catch(MalformedURLException e){
+                        e.printStackTrace();
+                    }
+                    break;
 
 
             }
