@@ -17,7 +17,7 @@
         <gherkin.version>2.11.5</gherkin.version>
 
         <!-- test properties -->
-        <baseUrl>http://test.film4.com</baseUrl>
+        <baseUrl>http://www.thesundaytimes.co.uk/</baseUrl>
         <browser>FIREFOX</browser>
 
 
@@ -118,14 +118,14 @@
                         <argument>--format</argument>
                         <argument>progress</argument>
                         <argument>--tags</argument>
-                        <argument>@search</argument>
+                        <argument>@regression</argument>
                         <argument>--format</argument>
                         <argument>html:src/test/resources/reports</argument>
                         <arugment>--format</arugment>
                         <argument>json:src/test/resources/reports/cucumber.json</argument>
                         <argument>--glue</argument>
                         <argument>steps</argument>
-                        <argument>src/test/java/features</argument>
+                        <argument>src/test/java/features/</argument>
                     </arguments>
                     <systemProperties>
                         <systemProperty>

@@ -4,7 +4,8 @@ import PageObjects.Search;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import cucumber.runtime.PendingException;
+
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 /**
@@ -39,18 +40,24 @@ public class SearchDefs {
     @Then("^the search results page is displayed$")
     public void the_search_results_page_is_displayed() throws Throwable {
         // Express the Regexp above with the code you wish you had
-        throw new PendingException();
+        assertTrue(search.isSearchResultsVisibile());
     }
 
     @And("^the page returns the first (\\d+) search results$")
-    public void the_page_returns_the_first_search_results(int arg1) throws Throwable {
+    public void the_page_returns_the_first_search_results(int results) throws Throwable {
         // Express the Regexp above with the code you wish you had
-        throw new PendingException();
+        assertEquals(results,search.noOfSearchResults());
     }
 
-    @And("^has clickable pages in the pagination$")
-    public void has_clickable_pages_in_the_pagination() throws Throwable {
+    @Then("^Sunday Times suggestions overlay is displayed$")
+    public void Sunday_Times_suggestions_overlay_is_displayed() throws Throwable {
         // Express the Regexp above with the code you wish you had
-        throw new PendingException();
+        assertTrue(search.isSuggestedItemsVisible());
+    }
+
+    @And("^has (\\d+) suggestions$")
+    public void has_suggestions(int suggestions) throws Throwable {
+        // Express the Regexp above with the code you wish you had
+        assertEquals(suggestions, search.noOfSuggestedItems());
     }
 }
