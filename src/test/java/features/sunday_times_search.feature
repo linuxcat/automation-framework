@@ -5,14 +5,14 @@ Feature: Sunday Times Search
     Then I can see the search box at the top right of the page
 
 
-  @regression, @search
+  @regression @search
     Scenario: Search for term
       When I type the search term "Luiz Suarez"
       And Click the search icon
       Then the search results page is displayed
       And the page returns the first 25 search results
 
-  @regression, @search
+  @regression @search
   Scenario: Sunday times pop out suggestions
     When I type the search term "sport"
     Then Sunday Times suggestions overlay is displayed

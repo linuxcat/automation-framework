@@ -3,7 +3,7 @@ Feature: Sunday Times top level navigation
   Background:
     Given I am viewing sunday times homepage
 
-  @sanity, @regression
+  @sanity @regression
   Scenario Outline: Top level navigation Items
     Then I should see a top level nav with <nav_item>
     Examples:
