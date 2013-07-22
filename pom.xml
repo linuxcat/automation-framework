@@ -118,7 +118,7 @@
                         <argument>--format</argument>
                         <argument>progress</argument>
                         <argument>--tags</argument>
-                        <argument>@regression</argument>
+                        <argument>@search</argument>
                         <argument>--format</argument>
                         <argument>html:src/test/resources/reports</argument>
                         <arugment>--format</arugment>
