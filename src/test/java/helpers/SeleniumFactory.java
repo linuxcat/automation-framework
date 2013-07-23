@@ -23,7 +23,7 @@ public class SeleniumFactory extends Thread {
     private static WebDriver aDriver=null;
     private static boolean avoidRecursiveCall=false;
 
-    public enum BrowserName{FIREFOX, GOOGLECHROME, SAUCELABS, OPERA, IE, GRID_FIREFOX}
+    public enum BrowserName{FIREFOX, GOOGLECHROME, SAUCELABS, OPERA, GRID_IE, GRID_FIREFOX}
     public static BrowserName currentDriver;
     private static final BrowserName useThisDriver = BrowserName.valueOf(System.getProperty("browser"));
 
@@ -50,10 +50,12 @@ public class SeleniumFactory extends Thread {
                     break;
 
 
-                case IE:
+                case GRID_IE:
                     try {
+                        System.setProperty("webdriver.ie.driver", "C:\\Users\\sarndeep\\Desktop\\iedriver\\IEDriverServer.exe");
                         DesiredCapabilities capability = DesiredCapabilities.internetExplorer();
-                        aDriver= new RemoteWebDriver(new URL("http://192.168.100.13:4444/wd/hub"), capability);
+                        aDriver= new RemoteWebDriver(new URL("http://192.168.69.45:4444/wd/hub"), capability);
+                        currentDriver = BrowserName.GRID_IE;
                     }catch(MalformedURLException e){
                         e.printStackTrace();
                     }
