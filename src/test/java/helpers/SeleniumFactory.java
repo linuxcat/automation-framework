@@ -62,6 +62,19 @@ public class SeleniumFactory extends Thread {
                     break;
 
 
+                case GOOGLECHROME:
+                    try {
+                        System.setProperty("webdriver.chrome.driver", "C:\\Users\\sarndeep\\Desktop\\chromedriver\\chromedriver.exe");
+                        DesiredCapabilities capability = DesiredCapabilities.chrome();
+                        capability.setCapability("chrome.binary", "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe");
+                        aDriver= new RemoteWebDriver(new URL("http://192.168.69.45:4444/wd/hub"), capability);
+                        currentDriver = BrowserName.GOOGLECHROME;
+                    }catch(MalformedURLException e){
+                        e.printStackTrace();
+                    }
+                    break;
+
+
             }
 
             Runtime.getRuntime().addShutdownHook(
