@@ -42,7 +42,7 @@ public class SeleniumFactory extends Thread {
                 case GRID_FIREFOX:
                     try {
                         DesiredCapabilities capability = DesiredCapabilities.firefox();
-                        aDriver= new RemoteWebDriver(new URL("http://192.168.69.45:4444/wd/hub"), capability);
+                        aDriver= new RemoteWebDriver(new URL("http://192.168.0.88:4444/wd/hub"), capability);
                         currentDriver = BrowserName.GRID_FIREFOX;
                     }catch(MalformedURLException e){
                         e.printStackTrace();
@@ -54,7 +54,7 @@ public class SeleniumFactory extends Thread {
                     try {
                         System.setProperty("webdriver.ie.driver", "C:\\Users\\sarndeep\\Desktop\\iedriver\\IEDriverServer.exe");
                         DesiredCapabilities capability = DesiredCapabilities.internetExplorer();
-                        aDriver= new RemoteWebDriver(new URL("http://192.168.69.45:4444/wd/hub"), capability);
+                        aDriver= new RemoteWebDriver(new URL("http://192.168.0.88:4444/wd/hub"), capability);
                         currentDriver = BrowserName.GRID_IE;
                     }catch(MalformedURLException e){
                         e.printStackTrace();
@@ -67,7 +67,7 @@ public class SeleniumFactory extends Thread {
                         System.setProperty("webdriver.chrome.driver", "C:\\Users\\sarndeep\\Desktop\\chromedriver\\chromedriver.exe");
                         DesiredCapabilities capability = DesiredCapabilities.chrome();
                         capability.setCapability("chrome.binary", "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe");
-                        aDriver= new RemoteWebDriver(new URL("http://192.168.69.45:4444/wd/hub"), capability);
+                        aDriver= new RemoteWebDriver(new URL("http://192.168.0.88:4444/wd/hub"), capability);
                         currentDriver = BrowserName.GOOGLECHROME;
                     }catch(MalformedURLException e){
                         e.printStackTrace();
