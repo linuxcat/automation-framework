@@ -23,7 +23,7 @@ public class SeleniumFactory extends Thread {
     private static WebDriver aDriver=null;
     private static boolean avoidRecursiveCall=false;
 
-    public enum BrowserName{FIREFOX, GOOGLECHROME, SAUCELABS, OPERA, IE, GRID}
+    public enum BrowserName{FIREFOX, GOOGLECHROME, SAUCELABS, OPERA, IE, GRID_FIREFOX}
     public static BrowserName currentDriver;
     private static final BrowserName useThisDriver = BrowserName.valueOf(System.getProperty("browser"));
 
@@ -39,11 +39,11 @@ public class SeleniumFactory extends Thread {
                     currentDriver = BrowserName.FIREFOX;
                     break;
 
-                case GRID:
+                case GRID_FIREFOX:
                     try {
                         DesiredCapabilities capability = DesiredCapabilities.firefox();
-                        aDriver= new RemoteWebDriver(new URL("http://192.168.100.13:4444/wd/hub"), capability);
-                        currentDriver = BrowserName.GRID;
+                        aDriver= new RemoteWebDriver(new URL("http://192.168.69.45:4444/wd/hub"), capability);
+                        currentDriver = BrowserName.GRID_FIREFOX;
                     }catch(MalformedURLException e){
                         e.printStackTrace();
                     }

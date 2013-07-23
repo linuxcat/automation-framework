@@ -18,7 +18,7 @@
 
         <!-- test properties -->
         <baseUrl>http://www.thesundaytimes.co.uk/</baseUrl>
-        <browser>FIREFOX</browser>
+        <browser>GRID_FIREFOX</browser>
 
 
     </properties>
