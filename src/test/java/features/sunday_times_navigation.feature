@@ -21,7 +21,7 @@ Feature: Sunday Times top level navigation
       |papers     |
 
 
-    @manual
+    @regression @manual
     Scenario: Manual Test
       Given I want to run a manual test
       When I do a manual action
