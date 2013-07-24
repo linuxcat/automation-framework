@@ -6,7 +6,7 @@ Feature: Sunday Times Search
 
 
   @regression @search
-    Scenario: Search for term
+    Scenario: Search for articles using a search term
       When I type the search term "Luiz Suarez"
       And Click the search icon
       Then the search results page is displayed
