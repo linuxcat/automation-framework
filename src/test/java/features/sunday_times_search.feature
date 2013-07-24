@@ -2,7 +2,7 @@ Feature: Sunday Times Search
 
   As a User on the Sunday Times Site
   I want to Search the Sunday Times Site
-  So That I can find articles that im interested in
+  So That I can find articles that I am interested in
 
   Background:
     Given I am viewing sunday times homepage
