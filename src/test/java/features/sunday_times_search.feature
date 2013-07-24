@@ -1,5 +1,9 @@
 Feature: Sunday Times Search
 
+  As a User on the Sunday Times Site
+  I want to Search the Sunday Times Site
+  So That I can find articles that im interested in
+
   Background:
     Given I am viewing sunday times homepage
     Then I can see the search box at the top right of the page
