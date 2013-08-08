@@ -19,6 +19,7 @@
         <!-- test properties -->
         <baseUrl>http://www.thesundaytimes.co.uk/</baseUrl>
         <browser>GRID_FIREFOX</browser>
+        <grid_ip>192.168.0.10</grid_ip>
 
 
     </properties>

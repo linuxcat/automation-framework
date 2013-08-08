@@ -30,15 +30,15 @@ public class Search {
         driver = SeleniumFactory.get();
     }
 
-    public Boolean isSearchBoxVisible(){
+    public boolean isSearchBoxVisible(){
         return WebPageHelpers.isElementPresentByCss(mainSearchBoxCcsLocator);
     }
 
-    public Boolean isSearchResultsVisibile(){
+    public boolean isSearchResultsVisibile(){
         return WebPageHelpers.isElementPresentByCss(searchContenCssLocator);
     }
 
-    public Boolean isSuggestedItemsVisible(){
+    public boolean isSuggestedItemsVisible(){
         WebPageHelpers.waitForElement(suggestItemsCssLocator);
         return WebPageHelpers.isElementPresentByCss(suggestItemsCssLocator);
     }

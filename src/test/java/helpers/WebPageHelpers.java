@@ -21,7 +21,7 @@ public class WebPageHelpers {
         // load page through selenium 2.0
         String fullURL = System.getProperty("baseUrl") + url;
         if ((url.contains("homepage"))) {
-            fullURL =  "http://www.thesundaytimes.co.uk";
+            fullURL =  System.getProperty("baseUrl");
         }
 
         System.out.println("Opening URL: " + fullURL);

@@ -26,6 +26,7 @@ public class SeleniumFactory extends Thread {
     public enum BrowserName{FIREFOX, GOOGLECHROME, SAUCELABS, OPERA, GRID_IE, GRID_FIREFOX}
     public static BrowserName currentDriver;
     private static final BrowserName useThisDriver = BrowserName.valueOf(System.getProperty("browser"));
+    private static final String grid_address = System.getProperty("grid_url");
 
 
     public static WebDriver get() {
@@ -42,7 +43,7 @@ public class SeleniumFactory extends Thread {
                 case GRID_FIREFOX:
                     try {
                         DesiredCapabilities capability = DesiredCapabilities.firefox();
-                        aDriver= new RemoteWebDriver(new URL("http://192.168.0.88:4444/wd/hub"), capability);
+                        aDriver= new RemoteWebDriver(new URL("http://"+grid_address+":4444/wd/hub"), capability);
                         currentDriver = BrowserName.GRID_FIREFOX;
                     }catch(MalformedURLException e){
                         e.printStackTrace();
@@ -54,7 +55,7 @@ public class SeleniumFactory extends Thread {
                     try {
                         System.setProperty("webdriver.ie.driver", "C:\\Users\\sarndeep\\Desktop\\iedriver\\IEDriverServer.exe");
                         DesiredCapabilities capability = DesiredCapabilities.internetExplorer();
-                        aDriver= new RemoteWebDriver(new URL("http://192.168.0.88:4444/wd/hub"), capability);
+                        aDriver= new RemoteWebDriver(new URL("http://"+grid_address+":4444/wd/hub"), capability);
                         currentDriver = BrowserName.GRID_IE;
                     }catch(MalformedURLException e){
                         e.printStackTrace();
@@ -67,7 +68,7 @@ public class SeleniumFactory extends Thread {
                         System.setProperty("webdriver.chrome.driver", "C:\\Users\\sarndeep\\Desktop\\chromedriver\\chromedriver.exe");
                         DesiredCapabilities capability = DesiredCapabilities.chrome();
                         capability.setCapability("chrome.binary", "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe");
-                        aDriver= new RemoteWebDriver(new URL("http://192.168.0.88:4444/wd/hub"), capability);
+                        aDriver= new RemoteWebDriver(new URL("http://"+grid_address+":4444/wd/hub"), capability);
                         currentDriver = BrowserName.GOOGLECHROME;
                     }catch(MalformedURLException e){
                         e.printStackTrace();
