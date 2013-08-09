@@ -26,7 +26,7 @@ public class SeleniumFactory extends Thread {
     public enum BrowserName{FIREFOX, GOOGLECHROME, SAUCELABS, OPERA, GRID_IE, GRID_FIREFOX}
     public static BrowserName currentDriver;
     private static final BrowserName useThisDriver = BrowserName.valueOf(System.getProperty("browser"));
-    private static final String grid_address = "192.168.0.10";
+    private static final String grid_address = "192.168.1.10";
 
 
     public static WebDriver get() {
