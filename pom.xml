@@ -18,8 +18,10 @@
 
         <!-- test properties -->
         <baseUrl>http://www.thesundaytimes.co.uk/</baseUrl>
-        <browser>GRID_FIREFOX</browser>
+        <browser>FIREFOX</browser>
         <grid_ip>192.168.0.10</grid_ip>
+        <tags>@regression</tags>
+
 
 
     </properties>
@@ -119,7 +121,7 @@
                         <argument>--format</argument>
                         <argument>progress</argument>
                         <argument>--tags</argument>
-                        <argument>@regression</argument>
+                        <argument>${tags}</argument>
                         <argument>--format</argument>
                         <argument>html:src/test/resources/reports</argument>
                         <arugment>--format</arugment>
@@ -136,6 +138,10 @@
                         <systemProperty>
                             <key>browser</key>
                             <value>${browser}</value>
+                        </systemProperty>
+                        <systemProperty>
+                            <key>tags</key>
+                            <value>${tags}</value>
                         </systemProperty>
                     </systemProperties>
 
